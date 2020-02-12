@@ -1,0 +1,65 @@
+// Policy goes in (iam)roles policies in 'Permissions' tab
+// Replace "Resource": "arn:aws:kms:<region>:<amazon-account-id>:key/<kms-key-id>"
+// this policy will give most read/write/list permissions about a certain key created with KMS
+// reference: Made with "Create inline policy" option
+
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "VisualEditor0",
+            "Effect": "Allow",
+            "Action": [
+                "kms:EnableKey",
+                "kms:GetPublicKey",
+                "kms:ImportKeyMaterial",
+                "kms:Decrypt",
+                "kms:GenerateDataKeyWithoutPlaintext",
+                "kms:Verify",
+                "kms:CancelKeyDeletion",
+                "kms:ListResourceTags",
+                "kms:GenerateDataKeyPair",
+                "kms:GetParametersForImport",
+                "kms:Encrypt",
+                "kms:GetKeyRotationStatus",
+                "kms:ScheduleKeyDeletion",
+                "kms:ReEncryptTo",
+                "kms:DescribeKey",
+                "kms:Sign",
+                "kms:EnableKeyRotation",
+                "kms:ListKeyPolicies",
+                "kms:UpdateKeyDescription",
+                "kms:ListRetirableGrants",
+                "kms:GetKeyPolicy",
+                "kms:DeleteImportedKeyMaterial",
+                "kms:GenerateDataKeyPairWithoutPlaintext",
+                "kms:DisableKey",
+                "kms:DisableKeyRotation",
+                "kms:ReEncryptFrom",
+                "kms:ListGrants",
+                "kms:UpdateAlias",
+                "kms:CreateAlias",
+                "kms:GenerateDataKey",
+                "kms:DeleteAlias"
+            ],
+            "Resource": "arn:aws:kms:us-east-1:<aws-account-id>:key/<kms-key-id>" // <-- replace here with your unique ids
+        },
+        {
+            "Sid": "VisualEditor1",
+            "Effect": "Allow",
+            "Action": [
+                "kms:DescribeCustomKeyStores",
+                "kms:ListKeys",
+                "kms:DeleteCustomKeyStore",
+                "kms:GenerateRandom",
+                "kms:UpdateCustomKeyStore",
+                "kms:ListAliases",
+                "kms:CreateKey",
+                "kms:DisconnectCustomKeyStore",
+                "kms:ConnectCustomKeyStore",
+                "kms:CreateCustomKeyStore"
+            ],
+            "Resource": "*"
+        }
+    ]
+}
