@@ -1,6 +1,7 @@
 // Policy goes in bucket policies (not object) in 'Permissions' tab
 // Replace <bucket_name> for the name of your bucket
 // this policy won't let Putting any object in the bucket unless you choose a Server Side Encryption option (sse)
+// reference: https://aws.amazon.com/blogs/security/how-to-prevent-uploads-of-unencrypted-objects-to-amazon-s3/
 
 {
      "Version": "2012-10-17",
